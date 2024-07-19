@@ -5,6 +5,7 @@ enum class Category(val category: String) {
     RENDER("Render"),
     Utility("Utility"),
     Interface("Interface"),
+    ECat("ECat"),
     Music("Music"),
     ORNAMENTS("Ornament");
 }

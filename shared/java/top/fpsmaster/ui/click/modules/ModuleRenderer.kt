@@ -98,7 +98,7 @@ class ModuleRenderer(override var mod: Module) : ValueRender() {
                 FPSMaster.theme.moduleBorder, border.toInt()
             )
         )
-        if (mod.category === Category.Interface) {
+        if (mod.category === Category.Interface || mod.category === Category.ECat) {
             Render2DUtils.drawImage(
                 ResourceLocation("client/textures/modules/interface.png"),
                 x + 14,

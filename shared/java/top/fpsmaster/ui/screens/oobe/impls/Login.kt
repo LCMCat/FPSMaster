@@ -47,10 +47,10 @@ class Login(isOOBE: Boolean) : Scene() {
             try {
                 val login = login(username.text, password.text)
                 if (login["code"].asInt == 200) {
-                    if (FPSMaster.accountManager != null) {
+//                    if (FPSMaster.accountManager != null) {
                         FPSMaster.accountManager.username = username.text
                         FPSMaster.accountManager.token = login["msg"].asString
-                    }
+//                    }
                     saveTempValue("token", FPSMaster.accountManager.token)
                     FPSMaster.INSTANCE.loggedIn = true
                     if (isOOBE) {

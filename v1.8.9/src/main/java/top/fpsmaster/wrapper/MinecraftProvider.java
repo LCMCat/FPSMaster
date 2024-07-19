@@ -4,18 +4,22 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.multiplayer.PlayerControllerMP;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Session;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.fpsmaster.forge.api.IMinecraft;
 import top.fpsmaster.interfaces.game.IMinecraftProvider;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Collection;
 
 public class MinecraftProvider implements IMinecraftProvider {
@@ -33,6 +37,10 @@ public class MinecraftProvider implements IMinecraftProvider {
 
     public boolean isHoveringOverBlock() {
         return Minecraft.getMinecraft().objectMouseOver != null && Minecraft.getMinecraft().objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK;
+    }
+
+    public boolean isBreakingBlock(){
+        return (float) ReflectionHelper.getPrivateValue(PlayerControllerMP.class, Minecraft.getMinecraft().playerController, "curBlockDamageMP", "field_78770_f") != 0F;
     }
 
     public ItemStack getPlayerHeldItem() {
@@ -83,5 +91,27 @@ public class MinecraftProvider implements IMinecraftProvider {
     @Override
     public Object getCurrentScreen() {
         return Minecraft.getMinecraft().currentScreen;
+    }
+
+    @Override
+    public void clickMouse() {
+        try{
+
+            Method clickMouseMethod = ReflectionHelper.findMethod(Minecraft.class, Minecraft.getMinecraft(), new String[]{"clickMouse", "func_147116_af"});
+            clickMouseMethod.invoke(Minecraft.getMinecraft());
+        }catch (InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void rightClickMouse() {
+        try{
+
+            Method rightClickMouseMethod = ReflectionHelper.findMethod(Minecraft.class, Minecraft.getMinecraft(), new String[]{"rightClickMouse", "func_147118_V"});
+            rightClickMouseMethod.invoke(Minecraft.getMinecraft());
+        }catch (InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 }

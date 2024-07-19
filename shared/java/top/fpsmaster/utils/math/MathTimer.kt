@@ -15,7 +15,11 @@ class MathTimer {
         return false
     }
 
-    private fun reset() {
+    fun passed(delay: Long): Boolean {
+        return System.currentTimeMillis() - start > delay
+    }
+
+    fun reset() {
         start = System.currentTimeMillis()
     }
 }

@@ -246,12 +246,32 @@ nameprotect.desc=Not Showing Real Name
 nameprotect.name=Fake Name
 
 
+autoclicker=Auto Clicker
+autoclicker.desc=Automatically Click
+autoclicker.leftcps=Average CPS of Left Clicker
+autoclicker.leftdelta=Range of Left CPS
+autoclicker.canbreakblock=Break Blocks
+
+rightclicker=Right Clicker
+rightclicker.desc=Automatically Right Click
+rightclicker.rightcps=Average CPS of Right Clicker
+rightclicker.rightdelta=Range of Right CPS
+rightclicker.blockonly=Blocks Only
+
+keeprange=Keep Range
+keeprange.desc=Keep A Specific Range From Enemies
+keeprange.workdistance=Work Distance
+keeprange.distancedelta=Range of Distance
+keeprange.keeptick=Keep Tick
+keeprange.resttick=Rest Tick
+keeprange.comboonly=Combo Only
 
 # Category
 category.optimize=Optimization
 category.render=Visual
 category.utility=Utility
 category.interface=Interface
+category.ecat=ECat
 category.music=Music
 category.theme=Theme
 category.ornament=Ornament

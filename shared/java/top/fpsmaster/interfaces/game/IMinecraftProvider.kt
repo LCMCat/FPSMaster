@@ -15,6 +15,7 @@ interface IMinecraftProvider : IProvider {
     fun getFontRenderer(): FontRenderer
     fun getPlayer(): EntityPlayerSP?
     fun isHoveringOverBlock(): Boolean
+    fun isBreakingBlock(): Boolean
     fun getPlayerHeldItem(): ItemStack?
     fun getWorld(): WorldClient?
     fun getArmorInventory(): Array<ItemStack?>
@@ -25,4 +26,6 @@ interface IMinecraftProvider : IProvider {
     fun removeClickDelay()
     fun printChatMessage(message: Any)
     fun getPlayerInfoMap(): Collection<NetworkPlayerInfo?>?
+    fun clickMouse()
+    fun rightClickMouse()
 }

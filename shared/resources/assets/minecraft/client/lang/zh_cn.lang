@@ -467,11 +467,32 @@ dragonwings.chroma=彩色
 directiondisplay=方向显示
 directiondisplay.desc=显示一个指南针
 
+autoclicker=自动点击器
+autoclicker.desc=自动进行鼠标点击
+autoclicker.leftcps=左键平均CPS
+autoclicker.leftdelta=左键CPS极差
+autoclicker.canbreakblock=破坏方块
+
+rightclicker=右键点击器
+rightclicker.desc=自动进行鼠标右键点击
+rightclicker.rightcps=右键平均CPS
+rightclicker.rightdelta=右键CPS极差
+rightclicker.blockonly=仅方块
+
+keeprange=控距
+keeprange.desc=与敌人保持一定距离
+keeprange.workdistance=生效距离
+keeprange.distancedelta=距离极差
+keeprange.keeptick=前进暂停刻长
+keeprange.resttick=生效暂停刻长
+keeprange.comboonly=仅连击
+
 # 类别
 category.optimize=优化
 category.render=视觉
 category.utility=实用
 category.interface=界面
+category.ecat=猫猫
 category.music=音乐
 category.theme=主题
 category.ornament=饰品

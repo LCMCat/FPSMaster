@@ -58,6 +58,7 @@ class PlayerManager {
 
     @Subscribe
     fun onCape(e: EventCapeLoading) {
+        /*
         try {
             val player = getPlayer(e.playerName)
             if (player.uuid != e.player.uniqueID.toString()) return
@@ -102,6 +103,8 @@ class PlayerManager {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+         */
     }
 
     private val allUsers: Unit

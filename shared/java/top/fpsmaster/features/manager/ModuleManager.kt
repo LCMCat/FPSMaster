@@ -11,6 +11,7 @@ import top.fpsmaster.features.impl.interfaces.*
 import top.fpsmaster.features.impl.optimizes.*
 import top.fpsmaster.features.impl.render.*
 import top.fpsmaster.features.impl.utility.*
+import top.fpsmaster.features.impl.ecat.*
 import top.fpsmaster.interfaces.ProviderManager
 import top.fpsmaster.ui.click.MainPanel
 import top.fpsmaster.utils.Utility
@@ -97,6 +98,9 @@ class ModuleManager {
         modules.add(ClientCommand())
         modules.add(MiniMap())
         modules.add(DirectionDisplay())
+        modules.add(AutoClicker())
+        modules.add(RightClicker())
+        modules.add(KeepRange())
 
         if (ProviderManager.constants.getVersion() == "1.12.2") {
             modules.add(HideIndicator())

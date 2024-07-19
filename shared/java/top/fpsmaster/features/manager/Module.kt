@@ -110,6 +110,7 @@ open class Module {
     }
 
     companion object {
-        var mc: Minecraft = Minecraft.getMinecraft()
+        @JvmStatic
+        protected var mc: Minecraft = Minecraft.getMinecraft()
     }
 }

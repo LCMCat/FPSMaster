@@ -147,7 +147,7 @@ class FPSMaster {
         const val FILE_API = "https://files.fpsmaster.top"
 
         const val EDITION = Constants.EDITION
-        const val COPYRIGHT = "Copyright ©2020-2024  FPSMaster Team  All Rights Reserved."
+        const val COPYRIGHT = "Boosted by FPSMaster Team & CCat Team. All Rights Reserved."
 
         @JvmField
         var INSTANCE = FPSMaster()
@@ -227,7 +227,7 @@ class FPSMaster {
         @JvmStatic
         fun getClientTitle(): String {
             checkDevelopment()
-            return "$CLIENT_NAME $CLIENT_VERSION ${Constants.VERSION} (${Constants.EDITION}) (${GitInfo.branch} - ${GitInfo.commitIdAbbrev})" + if (development) " - Developer Mode" else ""
+            return "$CLIENT_NAME $CLIENT_VERSION ${Constants.VERSION}" + if (development) " - Developer Mode" else ""
         }
     }
 }

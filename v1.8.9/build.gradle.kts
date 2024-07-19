@@ -6,7 +6,6 @@ plugins {
     id("gg.essential.loom") version "0.10.0.+"
     id("dev.architectury.architectury-pack200") version "0.1.3"
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("com.gorylenko.gradle-git-properties") version "2.2.1"
 
     kotlin("jvm") version "2.0.0-Beta4"
 }
@@ -132,19 +131,11 @@ tasks.processResources {
     inputs.property("mixinGroup", mixinGroup)
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-    dependsOn(tasks.generateGitProperties)
     filesMatching(listOf("mcmod.info", "mixins.$modid.json")) {
         expand(inputs.properties)
     }
 
     rename("(.+_at.cfg)", "META-INF/$1")
-}
-
-gitProperties {
-    gitPropertiesResourceDir = project.file("src/main/resources")
-    gitPropertiesDir = project.file("src/main/resources")
-    gitPropertiesName = "git.properties"
-    keys = arrayOf("git.branch", "git.commit.id", "git.commit.time", "git.commit.id.abbrev").toMutableList()
 }
 
 
