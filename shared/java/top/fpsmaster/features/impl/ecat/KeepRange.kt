@@ -43,6 +43,8 @@ class KeepRange : Module("KeepRange", Category.ECat) {
 
     @Subscribe
     fun onUpdate(e: EventUpdate) {
+        if(System.currentTimeMillis() - startRangeMs >= (20 * keepTick.value.toInt()))
+            resetKeyDown()
         if(target == null)
             return
         if(target!!.isDead){
@@ -71,8 +73,6 @@ class KeepRange : Module("KeepRange", Category.ECat) {
             KeyBinding.setKeyBindState(mc.gameSettings.keyBindForward.keyCode, false)
 //            mc.thePlayer.addChatComponentMessage(ChatComponentText("break"))
         }
-        if(System.currentTimeMillis() - startRangeMs >= (20 * keepTick.value.toInt()))
-            resetKeyDown()
     }
 
     @Subscribe
@@ -88,7 +88,7 @@ class KeepRange : Module("KeepRange", Category.ECat) {
 
 
     private fun resetKeyDown() {
-        if (Keyboard.isKeyDown(mc.gameSettings.keyBindForward.keyCode)) {
+        if (Keyboard.isKeyDown(mc.gameSettings.keyBindForward.keyCode) && mc.currentScreen == null) {
 //            mc.thePlayer.addChatComponentMessage(ChatComponentText("reset"))
 
             KeyBinding.setKeyBindState(mc.gameSettings.keyBindForward.keyCode, true)

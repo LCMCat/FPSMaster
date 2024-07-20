@@ -7,6 +7,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.init.Items;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,6 +24,10 @@ import top.fpsmaster.utils.math.MathUtils;
 public abstract class MixinAbstractClientPlayer extends MixinEntityPlayer {
 
     private ResourceLocation fpsmasterCape;
+
+    public MixinAbstractClientPlayer(World worldIn) {
+        super(worldIn);
+    }
 
     @Inject(method = "getFovModifier", at = @At("HEAD"), cancellable = true)
     public void customFov(CallbackInfoReturnable<Float> cir) {

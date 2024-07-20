@@ -250,6 +250,7 @@ autoclicker=Auto Clicker
 autoclicker.desc=Automatically Click
 autoclicker.leftcps=Average CPS of Left Clicker
 autoclicker.leftdelta=Range of Left CPS
+autoclicker.speeddelta=Maximum Value of CPS Floating 
 autoclicker.canbreakblock=Break Blocks
 
 rightclicker=Right Clicker
@@ -265,6 +266,20 @@ keeprange.distancedelta=Range of Distance
 keeprange.keeptick=Keep Tick
 keeprange.resttick=Rest Tick
 keeprange.comboonly=Combo Only
+
+aimassist=Aim Assist
+aimassist.desc=Automatically Aim at Enemies
+aimassist.hspeed=Horizontal Speed
+aimassist.vspeed=Vertical Speed
+aimassist.fov=Active Fov
+aimassist.mindistance=Active Distance
+aimassist.clickaim=Click Aim
+aimassist.canbreakblock=Break Block
+aimassist.targetplayer=Enemy: Player
+aimassist.targetanimal=Enemy: Animal
+aimassist.targetmob=Enemy: Mob
+aimassist.targetinvisible=Enemy: The Invisible
+aimassist.targetteam=Enemy: Team
 
 # Category
 category.optimize=Optimization

@@ -2,6 +2,7 @@ package top.fpsmaster.features.impl.ecat
 
 import net.minecraft.client.gui.inventory.GuiChest
 import net.minecraft.client.gui.inventory.GuiInventory
+import net.minecraft.util.ChatComponentText
 import top.fpsmaster.event.Subscribe
 import top.fpsmaster.event.events.EventTick
 import top.fpsmaster.event.events.EventUpdate
@@ -37,7 +38,8 @@ class AutoClicker : Module("AutoClicker", Category.ECat) {
 
         if(lTimer.delay(ldelay.toLong()) && mc.gameSettings.keyBindAttack.isKeyDown){
             ProviderManager.mcProvider.clickMouse()
-            ldelay = RandomUtils.nextFloat(600.0F / (leftCPS.value.toFloat() - leftDelta.value.toFloat()), 600.0F / (leftCPS.value.toFloat() + leftDelta.value.toFloat())).toInt()
+            setDelay()
+//            mc.thePlayer.addChatMessage(ChatComponentText("ldelay = " + ldelay))
         }
     }
 
@@ -52,6 +54,14 @@ class AutoClicker : Module("AutoClicker", Category.ECat) {
 
         if(leftCPS.value.toFloat() + leftDelta.value.toFloat() > 20)
             leftDelta.value = 0
+    }
+
+    private fun setDelay(){
+
+            ldelay = RandomUtils.nextFloat(600.0F / (leftCPS.value.toFloat() - RandomUtils.nextFloat(0F, leftDelta.value.toFloat())), 600.0F / (leftCPS.value.toFloat() + RandomUtils.nextFloat(0F, leftDelta.value.toFloat()))).toInt()
+
+
+
     }
 
 }

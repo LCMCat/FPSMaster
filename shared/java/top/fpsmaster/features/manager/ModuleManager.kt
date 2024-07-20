@@ -101,6 +101,7 @@ class ModuleManager {
         modules.add(AutoClicker())
         modules.add(RightClicker())
         modules.add(KeepRange())
+        modules.add(AimAssist())
 
         if (ProviderManager.constants.getVersion() == "1.12.2") {
             modules.add(HideIndicator())

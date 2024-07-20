@@ -471,7 +471,8 @@ autoclicker=自动点击器
 autoclicker.desc=自动进行鼠标点击
 autoclicker.leftcps=左键平均CPS
 autoclicker.leftdelta=左键CPS极差
-autoclicker.canbreakblock=破坏方块
+autoclicker.speeddelta=CPS浮动最大值
+autoclicker.canbreakblock=破坏方块暂停
 
 rightclicker=右键点击器
 rightclicker.desc=自动进行鼠标右键点击
@@ -486,6 +487,21 @@ keeprange.distancedelta=距离极差
 keeprange.keeptick=前进暂停刻长
 keeprange.resttick=生效暂停刻长
 keeprange.comboonly=仅连击
+
+aimassist=自动瞄准
+aimassist.desc=自动瞄准敌人
+aimassist.hspeed=横转向速度
+aimassist.vspeed=纵转向速度
+aimassist.fov=生效视场角
+aimassist.mindistance=最小生效距离
+aimassist.clickaim=按住左键瞄准
+aimassist.canbreakblock=破坏方块暂停
+aimassist.targetplayer=敌人:玩家
+aimassist.targetanimal=敌人:友好生物
+aimassist.targetmob=敌人:敌对生物
+aimassist.targetinvisible=敌人:隐身玩家
+aimassist.targetteam=敌人:队员
+
 
 # 类别
 category.optimize=优化
